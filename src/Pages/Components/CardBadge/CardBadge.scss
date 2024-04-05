@@ -1,0 +1,55 @@
+.boxBadge{
+    padding: 5px;
+    background-color: #FFFFFF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    img{
+        width: 209px;
+        height: 209px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-bottom: 9px;
+        padding: 2px;
+        text-align: center;
+    }
+    .badge{
+        width: 80px;
+        background-color: #00A7E7;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 3px;
+        font-weight: 500;
+        font-size: 9px;
+        color: white;
+        text-align: center;
+        margin-left: 7px;
+    }
+    .desc{
+        width: 200px;
+        padding: 8px;
+        .title{
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subtitle{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            column-gap: 5px;
+            font-size: 10px;
+            font-weight: 500;
+            color: grey;
+            margin-bottom: 7px;
+        }
+    }
+}
