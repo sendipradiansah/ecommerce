@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Home.scss';
 import Card from '../Components/Card/Card';
 import CardPackage from '../Components/CardPackage/CardPackage';
@@ -32,18 +32,32 @@ import Foot from '../../Assets/Images/foot.png';
 import Package from '../../Assets/Images/package.png';
 
 export default function Home() {
+
+
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen)
+    }
   return (
     <div>
         <div className="containerHome">
             <div className="header">
                 <div className="navigation">
                     <div className="navigation_inner">
+                        <div className="mobMenu" onClick={() => toggleMenu()}>
+                            <svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.1328 0.15625H0.867188C0.725391 0.15625 0.609375 0.272266 0.609375 0.414062V2.47656C0.609375 2.61836 0.725391 2.73438 0.867188 2.73438H26.1328C26.2746 2.73438 26.3906 2.61836 26.3906 2.47656V0.414062C26.3906 0.272266 26.2746 0.15625 26.1328 0.15625ZM26.1328 20.2656H0.867188C0.725391 20.2656 0.609375 20.3816 0.609375 20.5234V22.5859C0.609375 22.7277 0.725391 22.8438 0.867188 22.8438H26.1328C26.2746 22.8438 26.3906 22.7277 26.3906 22.5859V20.5234C26.3906 20.3816 26.2746 20.2656 26.1328 20.2656ZM26.1328 10.2109H0.867188C0.725391 10.2109 0.609375 10.327 0.609375 10.4688V12.5312C0.609375 12.673 0.725391 12.7891 0.867188 12.7891H26.1328C26.2746 12.7891 26.3906 12.673 26.3906 12.5312V10.4688C26.3906 10.327 26.2746 10.2109 26.1328 10.2109Z" fill="#2C394B"/>
+                            </svg>
+                        </div>
                         <a href=""><img src={Logo}></img></a>
-                        <div><a href="">Home</a></div>
-                        <div><a href="">Category</a></div>
-                        <div><a href="">About</a></div>
-                        <div><a href="">Contact</a></div>
-                        <div className="searchSection">
+                        <div onClick={() => toggleMenu()} className={menuOpen ? "dropmenu showmenu" : "listmenu"}>
+                            <div><a href="">Home</a></div>
+                            <div><a href="">Category</a></div>
+                            <div><a href="">About</a></div>
+                            <div><a href="">Contact</a></div>
+                        </div>
+                        <div onClick={() => toggleMenu()}  className={menuOpen ? "searchSection showmenu" : "searchSection"}>
                             <img src={Search}></img>
                             <input type="text" placeholder="Search something here!" />
                             <div className="button">Join the community</div>
@@ -53,6 +67,7 @@ export default function Home() {
                                 <img src={CaretDown} className="imgCaret"></img>
                             </div>
                         </div>
+                        <img className="search" src={Search}></img>
                     </div>
                 </div>
                 <div className="headerContent">
